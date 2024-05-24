@@ -1,0 +1,14 @@
+// Eigen Values
+A = [1, 2; 3, 4];
+e_val = spec(A);
+disp(e_val);
+
+// Eigen Vectors
+[e_vec, e_val] = spec(A);
+
+for i=1:size(e_vec, 2)
+    lambda = e_val(i);
+    v = e_vec(:, i);
+    result = A * v - lambda * v;
+    disp(result);
+end
